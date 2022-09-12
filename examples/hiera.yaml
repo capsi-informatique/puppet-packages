@@ -1,0 +1,24 @@
+---
+# os/Debian.yaml
+classes:
+  - packages
+  -
+packages::merge_behavior: deep
+packages:
+  aptitude:
+  ca-certificates:
+  open-vm-tools:
+    ensure: latest
+  pigz:
+  rsync:
+  python3-pip:
+  requests:
+    provider: pip3
+
+---
+# nodes/my-machine.yaml
+packages:
+  open-vm-tools:
+    ensure: ignore
+  rsync:
+    ensure: ignore
